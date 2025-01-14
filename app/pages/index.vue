@@ -1,6 +1,36 @@
 <script setup lang="ts">
-import type { HeroContent,AboutSection } from '~/types/content'
+import type { HeroContent, AboutSection,ProjectsSection } from '~/types/content'
 
+
+const projectsContent: ProjectsSection = {
+  headline: "Featured Work",
+  title: "Recent Projects",
+  description: "Explore some of my latest projects showcasing expertise in full-stack development, AI integration, and innovative solutions.",
+  projects: [{
+    title: "AI-Powered Recruitment Platform",
+    description: "A modern recruitment system with AI-driven candidate matching and automated screening processes.",
+    image: "/projects/recruitment-app.jpg",
+    tech: ["Vue.js", "Node.js", "OpenAI"],
+    color: "primary",
+    link: "/work/projects/recruitment",
+    class: "col-span-6 lg:col-span-8 row-span-2"
+  }, {
+    title: "E-commerce Dashboard",
+    description: "Real-time analytics and inventory management system for online stores.",
+    image: "/projects/dashboard.jpg",
+    tech: ["Nuxt 3", "MongoDB", "TailwindCSS"],
+    color: "gray",
+    link: "/work/projects/dashboard",
+    class: "col-span-6 lg:col-span-4 row-span-3"
+  }, {
+    title: "Mobile Payment App",
+    description: "Secure and user-friendly payment solution with blockchain integration.",
+    image: "/projects/payment-app.jpg",
+    tech: ["React Native", "Ethereum", "Node.js"],
+    link: "/work/projects/payment",
+    class: "col-span-6 row-span-2"
+  }]
+}
 const heroContent: HeroContent = {
   headline: "Full Stack Developer",
   name: "Zeyad Khadeeda",
@@ -124,6 +154,50 @@ const aboutContent: AboutSection = {
       <template #bottom>
         <div class="absolute inset-0 bg-gradient-to-t from-white to-transparent dark:from-gray-950 h-32 -bottom-32" />
       </template>
+    </ULandingSection>
+
+     <ULandingSection
+      :headline="projectsContent.headline"
+      :title="projectsContent.title"
+      :description="projectsContent.description"
+      class="bg-gray-50 dark:bg-gray-900"
+    >
+      <ULandingGrid>
+        <ULandingCard
+          v-for="project in projectsContent.projects"
+          :key="project.title"
+          :title="project.title"
+          :description="project.description"
+          :to="project.link"
+          :color="project.color"
+          :class="project.class"
+          orientation="horizontal"
+        >
+          <template #default>
+            <img
+              :src="project.image"
+              :alt="project.title"
+              class="w-full h-full object-cover rounded-lg"
+              loading="lazy"
+            />
+          </template>
+          
+          <template #description>
+            <div class="space-y-4">
+              <p>{{ project.description }}</p>
+              <div class="flex gap-2 flex-wrap">
+                <UBadge
+                  v-for="tech in project.tech"
+                  :key="tech"
+                  :label="tech"
+                  size="sm"
+                  color="gray"
+                />
+              </div>
+            </div>
+          </template>
+        </ULandingCard>
+      </ULandingGrid>
     </ULandingSection>
   </div>
 </template>

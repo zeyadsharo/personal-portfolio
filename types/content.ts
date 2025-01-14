@@ -29,3 +29,20 @@ export interface AboutSection {
   description: string
   skills: Skill[]
 }
+
+export interface ProjectCard {
+  title: string
+  description: string
+  image: string
+  tech: string[]
+  color?: string
+  link: string
+  class?: string
+}
+
+export interface ProjectsSection {
+  headline: string
+  title: string
+  description: string
+  projects: ProjectCard[]
+}
