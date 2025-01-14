@@ -47,8 +47,8 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
 
       <template #default>
         <UColorModeImage
-          light="/profile-light.jpg"
-          dark="/profile-dark.jpg"
+          light="/profile.jpeg"
+          dark="/profile.jpeg"
           alt="Zeyad Khadeeda"
           class="w-full max-w-lg rounded-2xl shadow-xl ring-1 ring-gray-300 dark:ring-gray-700"
           loading="eager"

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Index from "./pages/index.vue";
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne());
 
 const navigationLinks = [
   {
@@ -111,7 +111,9 @@ useSeoMeta({
 <template>
   <UHeader :links="navigationLinks">
     <template #logo>
-      <h1 class="text-xl font-bold">Portfolio</h1>
+      <h1 class="text-xl font-bold">{{ 
+      page.hero.name
+         }}</h1>
     </template>
 
     <template #right>
@@ -166,10 +168,10 @@ useSeoMeta({
     </template>
   </UHeader>
 
-  <Index />
-  <!-- <UMain>
+ <UMain>
     <NuxtPage />
-  </UMain> -->
+  </UMain>
+  
 
   <UFooter>
     <template #top>

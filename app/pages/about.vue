@@ -1,43 +1,97 @@
 <script setup lang="ts">
-// ...existing code...
+interface Skill {
+  name: string;
+  description: string;
+  icon: string;
+}
+
+const skills: Skill[] = [
+  {
+    name: 'Generative AI Integration',
+    description: 'Delivering AI-powered features that redefine user experiences',
+    icon: 'i-heroicons-cpu-chip'
+  },
+  {
+    name: 'Full-Stack Development',
+    description: 'Crafting robust web and mobile solutions using modern technologies',
+    icon: 'i-heroicons-code-bracket'
+  },
+  {
+    name: 'Project Management',
+    description: 'Leading cross-functional teams to achieve project goals',
+    icon: 'i-heroicons-presentation-chart-bar'
+  },
+  {
+    name: 'Database Development',
+    description: 'Designing scalable database systems for business needs',
+    icon: 'i-heroicons-circle-stack'
+  }
+]
+
+const contactLinks = [
+  {
+    label: 'Download Resume',
+    icon: 'i-heroicons-document-arrow-down',
+    to: '/resume.pdf',
+    target: '_blank'
+  },
+  {
+    label: 'Contact Me',
+    icon: 'i-heroicons-envelope',
+    to: '/contact',
+    color: 'primary'
+  }
+]
 </script>
 
 <template>
   <UPage>
     <UPageHeader
-      title="About Me"
-      subtitle="My Professional Journey"
-    >
-      <template #default>
-        <p>
-          Here is an expanded biography with a focus on personal journey,
-          professional background, and any relevant photos or media.
-        </p>
-      </template>
-    </UPageHeader>
+      headline="About Me"
+      title="Senior Software Engineer & Project Manager"
+      description="Turning complex problems into elegant solutions through code and innovation."
+      :links="contactLinks"
+    />
 
-    <UPageBody>
-      <section class="my-8">
-        <UProse>
-          <h2 class="text-2xl font-bold mb-4">Skills & Expertise</h2>
-          <!-- Alternatively, use <UCardGroup> if you prefer a card layout -->
-          <ul class="list-disc ml-6 space-y-2">
-            <li>Frontend Development (Nuxt 3, Vue 3)</li>
-            <li>Backend Services (Node.js, Databases)</li>
-            <li>Generative AI Integrations</li>
-            <li>Project Management & Collaboration</li>
-          </ul>
-        </UProse>
-      </section>
-      <UCallout
-        title="Stay Curious, Keep Building"
-        variant="info"
+    <UPageBody prose>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div>
+          <p class="text-lg">
+            I'm Zeyad Khadeeda, a Senior Software Engineer and Project Manager specializing in Generative AI, 
+            full-stack development, and cutting-edge system integrations.
+          </p>
+          <p class="mt-4">
+            My academic foundation in Computer Science combined with real-world experience enables me to solve 
+            complex problems and drive impactful results across various industries.
+          </p>
+        </div>
+        <!-- images/profile.jpg -->
+        <img 
+          src="/avatar.jpg" 
+          alt="Zeyad Khadeeda" 
+          class="rounded-lg shadow-lg w-full h-[300px] object-cover"
+        />
+      </div>
+
+      <h2 class="text-2xl font-bold mb-6">Technical Expertise</h2>
+      <UCardGroup class="mb-12">
+        <UCard
+          v-for="skill in skills"
+          :key="skill.name"
+          :title="skill.name"
+          :icon="skill.icon"
+        >
+          {{ skill.description }}
+        </UCard>
+      </UCardGroup>
+
+      <UCallout 
+        icon="i-heroicons-light-bulb" 
+        color="primary"
         class="mt-8"
       >
-        <p>
-          This is my professional motto to inspire continuous innovation,
-          growth, and pursuit of new solutions.
-        </p>
+        "Innovation is not just about creating something new, it's about creating something meaningful 
+        that solves real problems and improves lives."
       </UCallout>
     </UPageBody>
   </UPage>
