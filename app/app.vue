@@ -117,7 +117,7 @@ useSeoMeta({
     <template #right>
       <UColorModeButton />
 
-      <UAvatar src="/avatar.jpg" alt="Profile picture" class="w-8 h-8" />
+      <!-- <UAvatar src="/avatar.jpg" alt="Profile picture" class="w-8 h-8" /> -->
 
       <UButton
         to="https://github.com/yourusername"
