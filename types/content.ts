@@ -16,3 +16,16 @@ export interface HeroLink {
   size?: string
   target?: string
 }
+
+export interface Skill {
+  name: string
+  description: string
+  icon: string
+}
+
+export interface AboutSection {
+  headline: string
+  title: string
+  description: string
+  skills: Skill[]
+}
