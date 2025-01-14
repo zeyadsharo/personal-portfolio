@@ -46,3 +46,23 @@ export interface ProjectsSection {
   description: string
   projects: ProjectCard[]
 }
+
+export interface TestimonialAuthor {
+  name: string
+  description: string
+  avatar: {
+    src: string
+    loading?: 'eager' | 'lazy'
+  }
+}
+
+export interface TestimonialsSection {
+  headline: string
+  title: string
+  description: string
+  items: {
+    quote: string
+    author: TestimonialAuthor
+    icon?: string
+  }[]
+}
