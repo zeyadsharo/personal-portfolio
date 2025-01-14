@@ -41,6 +41,50 @@ const navigationLinks = [
   },
 ];
 
+const footerColumns = [{
+  label: 'Navigation',
+  children: [{
+    label: 'Home',
+    to: '/'
+  }, {
+    label: 'About',
+    to: '/about'
+  }, {
+    label: 'Projects',
+    to: '/work/projects'
+  }, {
+    label: 'Blog',
+    to: '/blog'
+  }, {
+    label: 'Contact',
+    to: '/contact'
+  }]
+}, {
+  label: 'Social',
+  children: [{
+    label: 'GitHub',
+    to: 'https://github.com/yourusername',
+    target: '_blank'
+  }, {
+    label: 'LinkedIn',
+    to: 'https://linkedin.com/in/yourusername',
+    target: '_blank'
+  }, {
+    label: 'Twitter',
+    to: 'https://twitter.com/yourusername',
+    target: '_blank'
+  }]
+}, {
+  label: 'Legal',
+  children: [{
+    label: 'Privacy Policy',
+    to: '/privacy'
+  }, {
+    label: 'Terms of Service',
+    to: '/terms'
+  }]
+}]
+
 useHead({
   meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
   link: [{ rel: "icon", href: "/favicon.ico" }],
@@ -128,6 +172,48 @@ useSeoMeta({
   </UMain> -->
 
   <UFooter>
-    <template #left> Copyright © {{ new Date().getFullYear() }} </template>
+    <template #top>
+      <UFooterColumns :links="footerColumns">
+        <template #right>
+          <div class="space-y-4">
+            <h3 class="text-sm font-semibold text-gray-900 dark:text-white">
+              Stay Connected
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Follow my journey and latest projects
+            </p>
+            <div class="flex gap-2">
+              <UColorModeButton />
+              <UButton
+                v-for="social in footerColumns[1].children"
+                :key="social.to"
+                :to="social.to"
+                :aria-label="social.label"
+                target="_blank"
+                color="gray"
+                variant="ghost"
+                :icon="`i-simple-icons-${social.label.toLowerCase()}`"
+              />
+            </div>
+          </div>
+        </template>
+      </UFooterColumns>
+    </template>
+
+    <template #left>
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        © {{ new Date().getFullYear() }} Zeyad Khadeeda. All rights reserved.
+      </span>
+    </template>
+
+    <template #right>
+      <UButton
+        to="#top"
+        color="gray"
+        variant="ghost"
+        icon="i-heroicons-arrow-up"
+        aria-label="Scroll to top"
+      />
+    </template>
   </UFooter>
 </template>
