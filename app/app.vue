@@ -171,7 +171,6 @@ useSeoMeta({
  <UMain>
     <NuxtPage />
   </UMain>
-  
 
   <UFooter>
     <template #top>

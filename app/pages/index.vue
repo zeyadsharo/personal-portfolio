@@ -16,7 +16,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
 </script>
 
 <template>
-  <div class="space-y-24 py-8">
+  <div class="">
     <ULandingHero
       :links="heroContent.links"
       orientation="horizontal"
@@ -96,7 +96,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
           class="absolute inset-0 bg-gradient-to-t from-white to-transparent dark:from-gray-950 h-32 -bottom-32"
         />
       </template>
-    </ULandingSection>
+    </ULandingSection> 
 
     <ULandingSection
       :headline="projectsContent.headline"
