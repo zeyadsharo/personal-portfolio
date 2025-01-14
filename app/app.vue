@@ -1,12 +1,33 @@
-<script setup>
-const links = [{
-  label: 'Features',
-  to: '#features',
-  exactHash: true
+<script setup lang="ts">
+const navigationLinks = [{
+  label: 'Home',
+  to: '/',
+  icon: 'i-heroicons-home'
 }, {
-  label: 'Documentation',
-  to: 'https://ui.nuxt.com/pro',
-  target: '_blank'
+  label: 'About',
+  to: '/about',
+  icon: 'i-heroicons-user'
+}, {
+  label: 'Work',
+  to: '/work',
+  icon: 'i-heroicons-briefcase',
+  children: [{
+    label: 'Projects',
+    to: '/work/projects',
+    description: 'View my featured projects and case studies'
+  }, {
+    label: 'Experience',
+    to: '/work/experience',
+    description: 'My professional experience and skills'
+  }]
+}, {
+  label: 'Blog',
+  to: '/blog',
+  icon: 'i-heroicons-document-text'
+}, {
+  label: 'Contact',
+  to: '/contact',
+  icon: 'i-heroicons-envelope'
 }]
 
 useHead({
@@ -36,26 +57,32 @@ useSeoMeta({
 </script>
 
 <template>
-  <UHeader :links="links">
+  <UHeader :links="navigationLinks">
     <template #logo>
-      Nuxt UI Pro <UBadge
-        label="Starter"
-        variant="subtle"
-        class="mb-0.5"
-      />
+      <h1 class="text-xl font-bold">Portfolio</h1>
     </template>
 
     <template #right>
       <UColorModeButton />
+      
+      <UAvatar
+        src="/avatar.jpg"
+        alt="Profile picture"
+        class="w-8 h-8"
+      />
 
       <UButton
-        to="https://github.com/nuxt-ui-pro/starter"
+        to="https://github.com/yourusername"
         target="_blank"
         icon="i-simple-icons-github"
-        aria-label="GitHub"
         color="gray"
         variant="ghost"
+        aria-label="GitHub Profile"
       />
+    </template>
+
+    <template #panel>
+      <UNavigationTree :links="navigationLinks" />
     </template>
   </UHeader>
 
