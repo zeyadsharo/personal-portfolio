@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import Index from './pages/index.vue';
+
 const navigationLinks = [{
   label: 'Home',
   to: '/',
@@ -86,9 +88,11 @@ useSeoMeta({
     </template>
   </UHeader>
 
-  <UMain>
+
+  <Index />
+  <!-- <UMain>
     <NuxtPage />
-  </UMain>
+  </UMain> -->
 
   <UFooter>
     <template #left>
