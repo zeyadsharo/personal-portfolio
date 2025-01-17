@@ -109,7 +109,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <UHeader :links="navigationLinks">
+  <!-- <UHeader :links="navigationLinks">
     <template #logo>
       <h1 class="text-xl font-bold">{{ 
       page.hero.name
@@ -119,7 +119,6 @@ useSeoMeta({
     <template #right>
       <UColorModeButton />
 
-      <!-- <UAvatar src="/avatar.jpg" alt="Profile picture" class="w-8 h-8" /> -->
 
       <UButton
         to="https://github.com/yourusername"
@@ -166,8 +165,8 @@ useSeoMeta({
     <template #panel>
       <UNavigationTree :links="navigationLinks" />
     </template>
-  </UHeader>
-
+  </UHeader> -->
+<AppHeader/>
  <UMain>
     <NuxtPage />
   </UMain>

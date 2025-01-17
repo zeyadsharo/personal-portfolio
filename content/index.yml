@@ -39,26 +39,47 @@ projects:
   title: Recent Projects
   description: Explore some of my latest projects showcasing expertise in full-stack development, AI integration, and innovative solutions.
   projects:
-    - title: AI-Powered Recruitment Platform
-      description: A modern recruitment system with AI-driven candidate matching and automated screening processes.
-      image: /projects/recruitment-app.jpg
-      tech: [Vue.js, Node.js, OpenAI]
-      color: primary
-      link: /work/projects/recruitment
-      class: col-span-6 lg:col-span-8 row-span-2
-    - title: E-commerce Dashboard
-      description: Real-time analytics and inventory management system for online stores.
-      image: /projects/dashboard.jpg
-      tech: [Nuxt 3, MongoDB, TailwindCSS]
-      color: gray
-      link: /work/projects/dashboard
-      class: col-span-6 lg:col-span-4 row-span-3
-    - title: Mobile Payment App
-      description: Secure and user-friendly payment solution with blockchain integration.
-      image: /projects/payment-app.jpg
-      tech: [React Native, Ethereum, Node.js]
-      link: /work/projects/payment
+    - title: Recruitment Application
+      description: Our latest project, the Recruitment Application, is geared towards streamlining the hiring process and making it a breeze for both HR staff and job seekers.
+      image: https://auk.edu.krd/wp-content/themes/auk/images/auk_10th_logo.png
+      tech: [Vue.js, Laravel, MySQL]
+      link: https://ra.auk.lelav.com/public/jobs
       class: col-span-6 row-span-2
+  
+    - title: Site Management System
+      description: Site Management System for the Korek Telecom Company, which is used to manage the company's sites and towers.
+      image: /korek.png
+      tech: [React, Node.js, MongoDB]
+      link: https://www.korektel.com
+      class: col-span-6 row-span-2
+  
+    - title: Epik edu System
+      description: Epik edu System is a platform for managing educational institutions, including student enrollment, course management, and teacher assignments.
+      image: /lelav_logo.png
+      tech: [Vue.js, Django, PostgreSQL]
+      link: https://www.epikedu.com/
+      class: col-span-6 row-span-2
+  
+    - title: SAS Portal
+      description: SAS Portal for the Korek Telecom Company, which is used to manage the company's customers subscriptions.
+      image: https://www.korektel.com/media/logos/logo_white.png
+      tech: [Angular, Spring Boot, Oracle]
+      link: https://www.korektel.com
+      class: col-span-6 row-span-2
+  
+    - title: CRM Report System
+      description: CRM Report System used for creating and managing reports for Marketing and Sales departments of Korek Telecom Company.
+      image: /korek.png
+      tech: [React, Express, MySQL]
+      link: https://www.korektel.com
+      class: col-span-6 row-span-2
+    - title: Recruitment Application
+      description: Our latest project, the Recruitment Application, is geared towards streamlining the hiring process and making it a breeze for both HR staff and job seekers.
+      image: https://auk.edu.krd/wp-content/themes/auk/images/auk_10th_logo.png
+      tech: [Vue.js, Laravel, MySQL]
+      link: https://auk.edu.krd/employment/
+      class: col-span-6 row-span-2
+
 
 testimonials:
   headline: Testimonials

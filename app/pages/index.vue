@@ -56,6 +56,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
       </template>
     </ULandingHero>
     <ULandingSection
+    id="about"
       :headline="aboutContent.headline"
       :title="aboutContent.title"
       :description="aboutContent.description"
@@ -99,6 +100,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
     </ULandingSection> 
 
     <ULandingSection
+        id='projects'
       :headline="projectsContent.headline"
       :title="projectsContent.title"
       :description="projectsContent.description"
@@ -142,6 +144,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
       </ULandingGrid>
     </ULandingSection>
     <ULandingSection
+      id="testimonials"
       :headline="testimonialsContent.headline"
       :title="testimonialsContent.title"
       :description="testimonialsContent.description"
