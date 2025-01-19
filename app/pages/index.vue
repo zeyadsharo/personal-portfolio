@@ -26,16 +26,21 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
         <UBadge
           :label="heroContent.headline"
           size="lg"
-          class="mb-8"
+          class="mb-1"
           variant="subtle"
         />
       </template>
 
       <template #title>
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold">
-          {{ heroContent.name }}
-          <br />
-          <span class="text-primary">{{ heroContent.title }}</span>
+          <!-- {{ heroContent.name }}
+          <br /> -->
+          <span class="text-primary">
+            
+            <!-- {{ heroContent.title }} -->
+              I'm Zeyad.Kh
+
+          </span>
         </h1>
       </template>
 
@@ -55,7 +60,7 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
         />
       </template>
     </ULandingHero>
-    <ULandingSection
+    <!-- <ULandingSection
     id="about"
       :headline="aboutContent.headline"
       :title="aboutContent.title"
@@ -97,9 +102,9 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
           class="absolute inset-0 bg-gradient-to-t from-white to-transparent dark:from-gray-950 h-32 -bottom-32"
         />
       </template>
-    </ULandingSection> 
+    </ULandingSection>  -->
 
-    <ULandingSection
+    <!-- <ULandingSection
         id='projects'
       :headline="projectsContent.headline"
       :title="projectsContent.title"
@@ -142,8 +147,8 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
           </template>
         </ULandingCard>
       </ULandingGrid>
-    </ULandingSection>
-    <ULandingSection
+    </ULandingSection> -->
+    <!-- <ULandingSection
       id="testimonials"
       :headline="testimonialsContent.headline"
       :title="testimonialsContent.title"
@@ -163,6 +168,6 @@ const testimonialsContent = computed<TestimonialsSection>(() => page.value.testi
           />
         </div>
       </UPageColumns>
-    </ULandingSection>
+    </ULandingSection> -->
   </div>
 </template>
